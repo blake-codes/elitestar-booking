@@ -61,7 +61,7 @@ const NavBar = styled.nav<NavProps>`
       display: ${({ $isOpen }) => ($isOpen ? "flex" : "none")};
       flex-direction: column;
       position: absolute;
-      top: 40px;
+      top: 70px;
       left: 0;
       width: 100%;
       background-color: #1a1a2e;
