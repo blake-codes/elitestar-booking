@@ -3,7 +3,6 @@ import { GlobalStyles } from "./styles/globalStyles";
 import { AuthProvider } from "./AuthContext";
 import Home from "./pages/ Home";
 import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
 
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -33,8 +32,6 @@ const App = () => {
           <Route path="/blog" element={<Blog />} />
 
           <Route element={<ProtectedRoute redirectTo="/login" />}>
-            <Route path="/dashboard" element={<Dashboard />} />
-
             <Route path="/accounts" element={<AdminDashboard />} />
             <Route path="/add-celeb" element={<AddCeleb />} />
 

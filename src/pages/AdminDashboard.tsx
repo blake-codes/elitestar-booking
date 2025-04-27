@@ -105,7 +105,7 @@ const AdminDashboard: React.FC = () => {
 
                     <Td>
                       <ViewButton
-                        onClick={() => navigate(`/account/${user._id}`)}
+                        onClick={() => navigate(`/celebrities/${user._id}`)}
                       >
                         View
                       </ViewButton>
