@@ -132,6 +132,7 @@ const eventTypes = [
   "Meet and Greet",
   "TV or Film Cameo",
   "Podcast Guest Spot",
+  "Reservation",
   "Custom Video Message",
   "Virtual Meet & Greet",
   "Social Media Promotion",
