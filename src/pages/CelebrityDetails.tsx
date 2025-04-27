@@ -263,10 +263,14 @@ const CelebrityDetails = () => {
 
         <BookingForm onSubmit={handleSubmit}>
           <h3>Book {celebrity.name}</h3>
+          <label htmlFor="name">Name</label>
           <Input name="name" type="text" placeholder="Your Name" required />
+          <label htmlFor="email">Email</label>
           <Input name="email" type="email" placeholder="Your Email" required />
+          <label htmlFor="date">Booking Date</label>
           <Input name="date" type="date" required />
           <SelectWrapper>
+            <label htmlFor="reason">Reason for Booking</label>
             <StyledSelect
               name="reason"
               value={selectedEventType}
@@ -281,6 +285,7 @@ const CelebrityDetails = () => {
               ))}
             </StyledSelect>
           </SelectWrapper>
+          <label htmlFor="message">Message</label>
           <TextArea name="message" rows={4} placeholder="Message (optional)" />
           <SubmitButton type="submit" disabled={submitting}>
             {submitting ? "Sending..." : "Send Booking Request"}

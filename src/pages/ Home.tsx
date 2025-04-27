@@ -200,19 +200,78 @@ type Star = {
   profession: string;
   profileImage: string;
 };
+
+const dummyStars: Star[] = [
+  {
+    id: 1,
+    name: "Bella Thorne",
+    profession: "Actress & Singer",
+    profileImage: "/assets/images/bella.jpeg",
+  },
+  {
+    id: 2,
+    name: "Chad Michael Murray",
+    profession: "Actor",
+    profileImage: "/assets/images/chad.jpg",
+  },
+  {
+    id: 3,
+    name: "Vanessa Hudgens",
+    profession: "Actress & Singer",
+    profileImage: "/assets/images/vanessa.jpg",
+  },
+  {
+    id: 4,
+    name: "Dove Cameron",
+    profession: "Actress & Singer",
+    profileImage: "/assets/images/dove.jpeg",
+  },
+  {
+    id: 5,
+    name: "Tyler Posey",
+    profession: "Actor & Musician",
+    profileImage: "/assets/images/posey.jpeg",
+  },
+  {
+    id: 6,
+    name: "Debby Ryan",
+    profession: "Actress",
+    profileImage: "/assets/images/debby.jpeg",
+  },
+  {
+    id: 7,
+    name: "Tim Tebow",
+    profession: "Football Player & Broadcaster",
+    profileImage: "/assets/images/tim.jpeg",
+  },
+  {
+    id: 8,
+    name: "Hope Solo",
+    profession: "Football Goalkeeper",
+    profileImage: "/assets/images/hope.jpeg",
+  },
+  {
+    id: 9,
+    name: "Nate Robinson",
+    profession: "Basketball Player",
+    profileImage: "/assets/images/nate.jpeg",
+  },
+  {
+    id: 10,
+    name: "Miesha Tate",
+    profession: "MMA Fighter",
+    profileImage: "/assets/images/tate.jpg",
+  },
+];
+
 // 🔹 Main Component
 const Home = () => {
   const [stars, setStars] = useState<Star[]>([]);
 
   useEffect(() => {
-    fetch("https://bookcelebrity-server.onrender.com/api/celebs")
-      .then((res) => res.json())
-      .then((data) => {
-        const shuffled = [...data].sort(() => 0.5 - Math.random());
-        const selected = shuffled.slice(0, 10);
-        setStars(selected);
-      })
-      .catch((error) => console.error("Error fetching stars:", error));
+    const shuffled = [...dummyStars].sort(() => 0.5 - Math.random());
+    const selected = shuffled.slice(0, 10);
+    setStars(selected);
   }, []);
 
   return (

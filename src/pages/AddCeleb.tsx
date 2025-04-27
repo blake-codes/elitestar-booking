@@ -6,7 +6,24 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const professions = ["Actor", "Musician", "Athlete", "Influencer", "Comedian"];
+const professions = [
+  "Actor/Actress",
+  "Musician",
+  "Athlete",
+  "Influencer",
+  "Comedian",
+  "TV Host",
+  "Reality Star",
+  "Model",
+  "YouTuber",
+  "TikTok Creator",
+  "Podcaster",
+  "Esports Player",
+  "Dancer",
+  "Fashion Designer",
+  "Fitness Coach",
+  "Author",
+];
 
 const MAX_IMAGE_SIZE_MB = 5;
 
@@ -106,54 +123,69 @@ const AddCeleb: React.FC = () => {
         <Header>Add a New Celebrity</Header>
         <BackButton onClick={() => navigate(-1)}>← Back</BackButton>
         <Form onSubmit={handleSubmit}>
-          <Label>Name</Label>
-          <Input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+          <FormGroup>
+            {" "}
+            <Label>Name</Label>
+            <Input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />{" "}
+          </FormGroup>
 
-          <Label>Profession</Label>
-          <Select
-            name="profession"
-            value={formData.profession}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select profession</option>
-            {professions.map((prof) => (
-              <option key={prof} value={prof}>
-                {prof}
-              </option>
-            ))}
-          </Select>
+          <FormGroup>
+            {" "}
+            <Label>Profession</Label>
+            <Select
+              name="profession"
+              value={formData.profession}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select profession</option>
+              {professions.map((prof) => (
+                <option key={prof} value={prof}>
+                  {prof}
+                </option>
+              ))}
+            </Select>
+          </FormGroup>
 
-          <Label>Bio</Label>
-          <TextArea
-            name="bio"
-            value={formData.bio}
-            onChange={handleChange}
-            rows={4}
-            required
-          />
+          <FormGroup>
+            {" "}
+            <Label>Bio</Label>
+            <TextArea
+              name="bio"
+              value={formData.bio}
+              onChange={handleChange}
+              rows={4}
+              required
+            />{" "}
+          </FormGroup>
 
-          <Label>Profile Image</Label>
-          <Input
-            type="file"
-            accept="image/*"
-            onChange={(e) => setProfileFile(e.target.files?.[0] || null)}
-            required
-          />
+          <FormGroup>
+            {" "}
+            <Label>Profile Image</Label>
+            <Input
+              type="file"
+              accept="image/*"
+              onChange={(e) => setProfileFile(e.target.files?.[0] || null)}
+              required
+            />{" "}
+          </FormGroup>
 
-          <Label>Bio Images (Max 5)</Label>
-          <Input
-            type="file"
-            accept="image/*"
-            multiple
-            onChange={(e) => setBioFiles(e.target.files)}
-          />
+          <FormGroup>
+            {" "}
+            <Label>Bio Images (Max 5)</Label>
+            <Input
+              type="file"
+              accept="image/*"
+              multiple
+              onChange={(e) => setBioFiles(e.target.files)}
+            />{" "}
+          </FormGroup>
 
           {error && <ErrorText>{error}</ErrorText>}
           <Button type="submit" disabled={loading}>
@@ -192,6 +224,11 @@ const Form = styled.form`
 const Label = styled.label`
   margin-bottom: 8px;
   font-weight: 500;
+`;
+const FormGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 `;
 
 const Input = styled.input`
