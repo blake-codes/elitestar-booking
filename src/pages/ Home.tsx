@@ -230,13 +230,13 @@ const dummyStars: Star[] = [
     id: 5,
     name: "Tyler Posey",
     profession: "Actor & Musician",
-    profileImage: "/assets/images/posey.jpeg",
+    profileImage: "/assets/images/posey.jpg",
   },
   {
     id: 6,
     name: "Debby Ryan",
     profession: "Actress",
-    profileImage: "/assets/images/debby.jpeg",
+    profileImage: "/assets/images/debby.jpg",
   },
   {
     id: 7,
@@ -248,13 +248,13 @@ const dummyStars: Star[] = [
     id: 8,
     name: "Hope Solo",
     profession: "Football Goalkeeper",
-    profileImage: "/assets/images/hope.jpeg",
+    profileImage: "/assets/images/hope.jpg",
   },
   {
     id: 9,
     name: "Nate Robinson",
     profession: "Basketball Player",
-    profileImage: "/assets/images/nate.jpeg",
+    profileImage: "/assets/images/nate.jpg",
   },
   {
     id: 10,
